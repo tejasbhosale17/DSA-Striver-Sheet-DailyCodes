@@ -6,17 +6,17 @@ import java.util.HashMap;
 public class Find_Duplicate_Number_287 {
     public static int findDuplicate(int[] nums) {
 //====================== Using Array Manipulation ============================
-    	//        Arrays.sort(nums);
-//        for(int i=0;i<nums.length;i++){
-//        	System.out.println(nums[i]);
-//        }
-//        for(int i=0;i<nums.length;i++){
-//            if(nums[i]==nums[i+1]){
-//            	
-//            return nums[i];
-//            }
-//        }
-//        return 0;
+    	Arrays.sort(nums);
+        for(int i=0;i<nums.length;i++){
+        	System.out.println(nums[i]);
+        }
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==nums[i+1]){
+            	
+            return nums[i];
+            }
+        }
+        return 0;
     	
 //======================== Using hashMap ==================================  	
     	//int nums[] = {3,1,3,4,2};
@@ -46,21 +46,29 @@ public class Find_Duplicate_Number_287 {
 //    	
     	
 //================ Easiest Solution but Time Limit Excedded ======================
-    	for(int i=0;i<nums.length;i++){
-    		for(int j=i+1;j<nums.length;j++) {
-    		int count=1;
-	         if(nums[i]==nums[j]){
-	          	return nums[i];
-	         }
-    		}
-    	}
-    	return 0;
+//    	for(int i=0;i<nums.length;i++){
+//    		for(int j=i+1;j<nums.length;j++) {
+//    		int count=1;
+//	         if(nums[i]==nums[j]){
+//	          	return nums[i];
+//	         }
+//    		}
+//    	}
+//    	return 0;
 //================================================================================   	
- 	
+//    	int count=0;
+//    	int temp=nums[count];
+//    	for(int i=1;i<nums.length;i++){
+//    		if(nums[i]==temp) {
+//    			return nums[i];
+//    		}
+//    		count++;
+//    	}
+//    	return 0;
     }
     
     public static void main(String[] args) {
-		int nums[] = {1,3,4,2,2};
+		int nums[] = {1,3,4,2,3};
 		int result =findDuplicate(nums);
 
 		System.out.println(result);
